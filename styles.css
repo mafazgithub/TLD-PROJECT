@@ -121,12 +121,26 @@ body {
 .btn-cancel { background:transparent; border:1px solid var(--white); color:var(--white); }
 .btn-submit { background:var(--blue); color:var(--white); }
 
-/* Responsive */
 @media (max-width:768px) {
   .page-container { width:100%; padding:24px 0 0; }
+
   .form-card { padding:24px 16px 300px; }
+
   .form-row { grid-template-columns:1fr; gap:16px; }
-  .form-actions { flex-direction:column-reverse; align-items:stretch; gap:12px; }
-  .btn { width:100%; }
+  
+  .form-actions {
+    flex-direction: row;          
+    justify-content: stretch;
+    align-items: center;
+    gap: 16px;                    
+    margin-top:16px;
+  }
+  .btn {
+    width:auto;                   
+    flex: 1 1 0;                  
+    min-width: 0;                 
+    height:40px;
+  }
+
   .user-name { display:none; }
 }
