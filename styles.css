@@ -1,0 +1,132 @@
+:root {
+  --bg-card:#2B414F;
+  --gold:#C6B98B;
+  --ghost:#999999;
+  --blue:#295BFF;
+  --white:#ffffff;
+}
+
+/* Reset */
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Inter',sans-serif;
+  background:#fff;
+  color:var(--white);
+}
+
+/* Page Container */
+.page-container {
+  width:90%;
+  max-width:1000px;
+  margin:0 auto;
+  padding-top:32px;
+}
+
+/* Header */
+.page-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 0;
+  color:#000; font-size:14px;
+}
+
+.header-left, .header-right { display:flex; align-items:center; }
+.header-right { gap:8px; margin-right:10px; }
+
+.logo-img { height:48px; width:auto; }
+.user-img, .doctor-face-img { height:32px; width:auto; }
+.doctor-face-img { border-radius:50%; }
+.user-name { font-size:14px; color:#000; }
+
+/* Form Card */
+.form-card {
+  background:var(--bg-card);
+  border-radius:8px;
+  padding:32px 40px 300px;
+  margin-top:16px;
+}
+
+/* Typography */
+.form-title {
+  font-size:24px; font-weight:600; color:var(--white);
+  margin-bottom:32px;
+}
+.section-title {
+  font-size:14px; font-weight:500; color:var(--gold);
+  margin-bottom:16px;
+}
+.form-label, .checkbox-text {
+  font-size:14px; font-weight:400; color:var(--white);
+}
+.thin-label { font-weight:400; }
+
+/* Form Layout */
+.profile-form { display:flex; flex-direction:column; gap:24px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.form-group { display:flex; flex-direction:column; }
+
+/* Inputs */
+.input-plain, .select-wrap select {
+  width:100%; font-size:14px; font-weight:400;
+  padding:12px 16px; border-radius:8px;
+  border:none; outline:none;
+}
+.input-plain {
+  background:transparent; color:var(--white);
+}
+.input-plain::placeholder { color:var(--ghost); }
+
+/* Selects */
+.select-wrap { position:relative; }
+.select-wrap select {
+  background:var(--bg-card); color:var(--ghost);
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  cursor:pointer; padding-right:28px;
+}
+.select-wrap select:valid { color:var(--white); }
+.select-wrap::after {
+  content:''; position:absolute; right:8px; top:50%;
+  transform:translateY(-50%);
+  width:12px; height:8px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;
+  pointer-events:none;
+}
+.select-wrap select option { background:var(--bg-card); color:#fff; }
+.select-wrap select option.sub-header { color:var(--ghost); font-weight:500; }
+
+/* Checkbox */
+.checkbox-line { margin-top:16px; }
+.checkbox-label { display:flex; align-items:center; gap:12px; cursor:pointer; }
+.checkbox-input { position:absolute; opacity:0; width:0; height:0; }
+.checkbox-custom {
+  width:18px; height:18px; border:2px solid #3a4f5f; border-radius:3px;
+  background:#3a4f5f; position:relative;
+}
+.checkbox-input:checked + .checkbox-custom {
+  background:var(--blue); border-color:var(--blue);
+}
+.checkbox-input:checked + .checkbox-custom::after {
+  content:''; position:absolute; left:5px; top:2px;
+  width:4px; height:8px;
+  border:solid var(--white); border-width:0 2px 2px 0;
+  transform:rotate(45deg);
+}
+
+/* Buttons */
+.form-actions { display:flex; justify-content:flex-end; gap:16px; margin-top:16px; }
+.btn {
+  height:40px; padding:0 24px;
+  border-radius:8px; font-size:14px; font-weight:400;
+  cursor:pointer; border:none;
+}
+.btn-cancel { background:transparent; border:1px solid var(--white); color:var(--white); }
+.btn-submit { background:var(--blue); color:var(--white); }
+
+/* Responsive */
+@media (max-width:768px) {
+  .page-container { width:100%; padding:24px 0 0; }
+  .form-card { padding:24px 16px 300px; }
+  .form-row { grid-template-columns:1fr; gap:16px; }
+  .form-actions { flex-direction:column-reverse; align-items:stretch; gap:12px; }
+  .btn { width:100%; }
+  .user-name { display:none; }
+}

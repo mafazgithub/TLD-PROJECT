@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-container">
+  <!-- Header -->
+  <header class="page-header">
+    <!-- Left image spanning full card height -->
+    <div class="header-left">
+      <img src="images/tld_left.png" alt="Logo" class="logo-img"/>
+    </div>
+
+    <!-- Right user info + images -->
+    <div class="header-right">
+      <img src="images/doctor_face.png" alt="Doctor Face" class="doctor-face-img"/>
+      
+      <!-- Name that hides in mobile -->
+      <span class="user-name hide-mobile">Dr. John Doe ▾</span>
+      
+      <img src="images/tld_right.png" alt="User Icon" class="user-img"/>
+    </div>
+  </header>
+
+  <!-- Form Card -->
+  <main class="form-card">
+    <h1 class="form-title">Create Your Profile</h1>
+
+    <form class="profile-form" novalidate>
+      <!-- Name Section -->
+      <section class="form-section">
+        <h2 class="section-title">Your Name</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <input id="firstName" type="text" class="input-plain" placeholder="First Name"/>
+          </div>
+          <div class="form-group">
+            <input id="lastName" type="text" class="input-plain" placeholder="Last Name"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="form-section">
+        <h2 class="section-title">Contact Details</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <input id="email" type="email" class="input-plain" placeholder="Email"/>
+          </div>
+          <div class="form-group">
+            <input id="mobile" type="tel" class="input-plain" placeholder="Mobile No"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- Role Section -->
+      <section class="form-section">
+        <h2 class="section-title">Select Primary Role:</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label thin-label" for="role">Role</label>
+            <div class="select-wrap">
+              <select id="role" required>
+                <option value="" disabled selected hidden>Select</option>
+                <option class="sub-header" disabled>Specialist</option>
+                <option>Owner</option>
+                <option>Partner</option>
+                <option>Associate</option>
+                <option class="sub-header" disabled>Others</option>
+                <option>Hygienist</option>
+                <option>Practice Success Director</option>
+                <option>Strategic Growth Partner</option>
+                <option>Treatment Consultant</option>
+                <option>Custom Role</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label thin-label" for="specialty">Specialty Type</label>
+            <div class="select-wrap">
+              <select id="specialty" required>
+                <option value="" disabled selected hidden>Select</option>
+                <option>Cardiology</option>
+                <option>Neurology</option>
+                <option>Orthopedics</option>
+                <option>Periodontist</option>
+                <option>Endodontist</option>
+                <option>Oral Surgeon</option>
+                <option>Prosthodontist</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="checkbox-line">
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input"/>
+            <span class="checkbox-custom" aria-hidden="true"></span>
+            <span class="checkbox-text">Is this user a producer?</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Location Section -->
+      <section class="form-section">
+        <h2 class="section-title">Select Location</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="select-wrap">
+              <select id="country" required>
+                <option value="" disabled selected hidden>Select</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="select-wrap">
+              <select id="state" required>
+                <option value="" disabled selected hidden>Select</option>
+                <option>California</option>
+                <option>New York</option>
+                <option>Texas</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Buttons -->
+      <div class="form-actions">
+        <button type="button" class="btn btn-cancel">Cancel</button>
+        <button type="submit" class="btn btn-submit">Submit</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+</body>
+</html>
